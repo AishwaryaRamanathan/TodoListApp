@@ -20,6 +20,7 @@ builder.Services.AddDbContext<TodoListDbContext>(Options => Options.UseInMemoryD
 
 var app = builder.Build();
 
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -108,6 +109,10 @@ app.MapDelete("/TodoList/DeletingTask{id:int}", async (int id, TodoListDbContext
 
 
 app.Run();
+
+//Make Program.cs into a public class so that other solution in this project can use it for testing purpose
+
+public partial class Program { }
 
 
 
